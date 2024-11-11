@@ -1,0 +1,77 @@
+
+@keyframes colorChange {
+    0% {
+      background-color: #f3e99e; 
+    }
+    25% {
+      background-color: #c6f5b4; 
+    }
+    50% {
+      background-color: #c1e6fd;
+    }
+    75% {
+      background-color: #e7ccf8; 
+    }
+    100% {
+      background-color: #f3e99e; 
+    }
+  }
+  
+  
+  body {
+    cursor: url(bus.png) 16 16, auto;
+    animation: colorChange 10s infinite; 
+    transition: background-color 1s ease; 
+    cursor: url(bus.png) 16 16, pointer;
+  }
+body, html {
+    cursor: url(bus.png) 16 16, auto;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body, html {
+    cursor: url(bus.png) 16 16, auto;
+    height: 100%;
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif; 
+    background-color: #f0f0f0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;      
+  }
+
+  
+  .image-container {
+    margin-top: 20px;   
+  }
+  
+  
+  img {
+    position: relative;
+    max-width: 50%;  
+    height: auto;   
+  }
+  img {
+    width: 80%; 
+    transition: transform 0.3s ease;
+  }
+  
+  
+  img:hover {
+    transform: scale(1.1); 
+    cursor: url(bus.png) 16 16, pointer;
+  }
+
+  p {
+    font-weight: bold;  
+    font-size: 30px;    
+    margin: 0;          
+    color: #333; 
+    font-family: Helvetica, Arial, sans-serif;
+    top: 50%;
+  }

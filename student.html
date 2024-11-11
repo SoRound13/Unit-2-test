@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>STUDENT</title>
+    <style>
+     body {
+        background-image: url(school.jpg);
+        background-size: cover;
+        background-position: center;
+      background-attachment: fixed;
+     }
+        /* Container for the video feed */
+        #container {
+            position: relative; /* Make it a positioning context for the overlay */
+            margin: 0px auto;
+            width: 400px;
+            height: 375px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Style for the video element */
+        #videoElement {
+            width: 50%; 
+            height: 50%; 
+            background-color: #666;
+            position:absolute;
+            left: 52%;
+            top: 16%;
+            object-fit: contain; 
+        }
+
+       
+        #overlayImage {
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 420px; 
+            height: auto; 
+            z-index: 10; 
+        }
+        #container:hover {
+    transform: scale(1.1); 
+    filter: brightness(1.1); 
+    
+}
+
+       
+        a img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px; 
+        }
+        h1 {
+            font-family: Helvetica, Arial, sans-serif; 
+      font-size: 70px; 
+      color: #ffffff; 
+      margin: 0;
+      text-align: center; 
+  text-shadow:1px 1px 10px #000000, 1px 1px 10px #040404;
+        }
+    </style>
+</head>
+<body>
+    <h1>STUDENT</h1>
+
+    <!-- The container holding the video and overlay image -->
+    <div id="container">
+        <!-- Video element that will display the webcam feed -->
+        <video autoplay="true" id="videoElement"></video>
+        
+        <!-- Overlay Image placed over the video -->
+         <a href="index.html">
+        <img src="18-plus-zip-oyster.png" id="overlayImage" alt="Overlay Image">
+        </a>
+    </div>
+
+    <script>
+        // Get the video element
+        var video = document.querySelector("#videoElement");
+
+        // Access the webcam using getUserMedia
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream; // Attach the stream to the video element
+                })
+                .catch(function (error) {
+                    console.log("Something went wrong when accessing the camera.");
+                });
+        }
+    </script>
+</body>
+</html>
